@@ -1,6 +1,7 @@
 // Importar pacotes/bibliotecas
 import express from "express";
 import dotenv from "dotenv";
+import PetRoute from './src/routes/PetRoute.js'
 
 // Criar aplicação com Express e configurar para aceitar JSON
 const app = express();
@@ -17,7 +18,7 @@ app.get("/", (req, res) => {
 
 
 // Aqui vão todas suas Rotas
-
+app.use('/pets', PetRoute);
 
 // Iniciar servidor escutando na porta definida
 app.listen(serverPort, () => {
